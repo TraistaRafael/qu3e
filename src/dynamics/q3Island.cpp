@@ -118,7 +118,7 @@ void q3Island::Solve( )
 			const r32 sqrLinVel = q3Dot( body->m_linearVelocity, body->m_linearVelocity );
 			const r32 cbAngVel = q3Dot( body->m_angularVelocity, body->m_angularVelocity );
 			const r32 linTol = Q3_SLEEP_LINEAR;
-			const r32 angTol = Q3_SLEEP_ANGULAR;
+			const r32 angTol;// = Q3_SLEEP_ANGULAR;
 
 			if ( sqrLinVel > linTol || cbAngVel > angTol )
 			{

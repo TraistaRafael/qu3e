@@ -34,6 +34,8 @@
 #include "../dynamics/q3ContactSolver.h"
 #include "../collision/q3Box.h"
 
+#include <iostream>
+
 //--------------------------------------------------------------------------------------------------
 // q3Scene
 //--------------------------------------------------------------------------------------------------
@@ -308,6 +310,9 @@ void q3Scene::Render( q3Render* render ) const
 
 	while ( body )
 	{
+		q3Vec3 pos = body->GetTransform().position;
+		std::cout << "Body pos:" << (string)pos.x << "," << (string)pos.y << "," << (string)pos.z << "\n";
+
 		body->Render( render );
 		body = body->m_next;
 	}
